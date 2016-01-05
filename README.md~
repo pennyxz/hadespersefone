@@ -1,7 +1,7 @@
 # hadespersefone
 
 esta es la primera practica de commit == lineaInutilNo1
-<<<<<<< HEAD
+
 
 　　　　　　　　　　　 ,iﾉﾉ
 　　　　　　　　　　,､ノﾉ:ﾚ
@@ -32,6 +32,6 @@ esta es la primera practica de commit == lineaInutilNo1
 　　　　　　　　　　 .／:,､┴ﾞ
 　　　　　　　　　　/／
 　　　　　　　　　　!'
-=======
+
 Esta es la segunda practica de commit que hace la genial de Persefone, por lo tanto no es inutil.
->>>>>>> 9db71a57264d448048de992e36a41f819401c4ef
+
