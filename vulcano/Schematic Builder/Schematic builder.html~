@@ -35,7 +35,6 @@
             }
           }
     }).data('gridster');
-esquema.disable_resize();
 	
 	cajaHerramientas = $("#cajaHerramientas ul").gridster({
 	namespace:'#cajaHerramientas',
