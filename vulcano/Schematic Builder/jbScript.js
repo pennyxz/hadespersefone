@@ -68,15 +68,11 @@ $(document).ready(function(){
 		
 	});
 	
-	//modal wait until the DOM has loaded before querying the document
-	$.get('ajax.html', function(data){
-		modal.open({content: data});
-	});
 
 	$('#btnExportar').click(function(e){
 		var codigo = $('#esquema').html();
 		//alert(codigo);
-		modal.open({content: "<textarea rows='30' cols='70'>"+codigo+"</textarea>"});
+		modal.open({content: "<p>HTML</p><textarea rows='30' cols='70'>"+codigo+"</textarea>"});
 		
 		e.preventDefault();
 	});
