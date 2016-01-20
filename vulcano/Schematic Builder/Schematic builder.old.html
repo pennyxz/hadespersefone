@@ -1,0 +1,141 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/jquery.gridster.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/gridstack.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+<script src="js/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/knockout-3.4.0.js"></script>
+<script type="text/javascript" src="js/lodash.js"></script>
+<script type="text/javascript" src="js/gridstack.js"></script>
+
+<script src="js/jbScript.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/pqScript.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<script type="text/javascript">
+  
+  var esquema;
+  var cajaHerramientas;
+
+  $(function(){
+
+    esquema = $("#esquema ul").gridster({
+	namespace:'#esquema',
+	min_rows: 20,
+        widget_margins: [10, 10],
+        widget_base_dimensions: [60, 60],
+        resize: {
+            enabled: true
+        }, draggable: {
+            start: function(e, ui, $widget) {
+			
+            },
+
+            drag: function(e, ui, $widget) {
+              
+            },
+
+            stop: function(e, ui, $widget) {
+              
+            }
+          }
+    }).data('gridster');
+esquema.disable_resize();
+	
+	cajaHerramientas = $("#cajaHerramientas ul").gridster({
+	namespace:'#cajaHerramientas',
+        widget_margins: [10, 10],
+        widget_base_dimensions: [140, 140],
+        resize: {
+            enabled: false
+        }
+    }).data('gridster');
+	
+	cajaHerramientas.disable();
+
+
+    // var collection = [
+    //     ['<li><div class="title">drag</div>Widget content</li>', 1, 2],
+    //     ['<li><div class="title">drag</div>Widget content</li>', 5, 2],
+    //     ['<li><div class="title">drag</div>Widget content</li>', 3, 2],
+    //     ['<li><div class="title">drag</div>Widget content</li>', 2, 1],
+    //     ['<li><div class="title">drag</div>Widget content</li>', 4, 1],
+    //     ['<li><div class="title">drag</div>Widget content</li>', 1, 2],
+    //     ['<li><div class="title">drag</div>Widget content</li>', 2, 1],
+    //     ['<li><div class="title">drag</div>Widget content</li>', 3, 2],
+    //     ['<li><div class="title">drag</div>Widget content</li>', 1, 1],
+    //     ['<li><div class="title">drag</div>Widget content</li>', 2, 2],
+    //     ['<li><div class="title">drag</div>Widget content</li>', 1, 3],
+    // ];
+
+    // $.each(collection, function(i, widget){
+    //     gridster.add_widget.apply(gridster, widget)
+    // });
+
+  });
+</script>
+<div id="block_0" style="background-color: #0000ff; text-align: center; margin: 0 auto;">
+<table style="width: 100%; text-align: center;">
+<tbody>
+
+<tr>
+<td style="width: 15%; text-align: center;">
+<select id="industrySelector">
+<option value="default">DEF</option>
+<option value="firstOption">1</option>
+<option value="secondOption">2</option>
+<option value="thirdOption">3</option>
+</select></td>
+<td style="width: 85%;text-align: center;">
+<button type="button" id="btnTamano" class="sb-btn sb-btn-color">Editar Tamaño</button>
+<button type="button" id="btnEliminar" class="sb-btn sb-btn-color">Eliminar componente</button>
+<button type="button" id="btnBorrarTodo" class="sb-btn sb-btn-color">Borrar Todo</button>
+<button type="button" id ="btnExportar" class="sb-btn sb-btn-color">Exportar</button>
+<button type="button" class="sb-btn sb-btn-color">Click!</button>
+</td>
+</tbody>
+</table>
+</div>
+<table style="width: 100%;">
+<tbody>
+
+
+<td style="width: 15%;" class="cajaHerramientas">
+        <div id="cajaHerramientas" class="gridster" style="width: 150px;">
+          <ul style="height: 480px;  position: relative;" >
+           
+          </ul>
+        </div>
+</td>
+<td style="width: 85%;" class="esquema">
+        <div id="esquema" class="gridster" style="width: 600px;">
+          <ul style="height: 480px; position: relative;">
+            <li data-row="1" data-col="1" data-sizex="2" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+            <li data-row="3" data-col="1" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+
+            <li data-row="3" data-col="3" data-sizex="2" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+            <li data-row="1" data-col="3" data-sizex="2" data-sizey="2" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+
+            <li class="gs-w" data-row="1" data-col="5" data-sizex="1" data-sizey="1" data-max-sizex="1" data-max-sizey="1"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+            <li data-row="2" data-col="5" data-sizex="2" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+            <li data-row="3" data-col="5" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+
+            <li data-row="1" data-col="6" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+            <li data-row="3" data-col="6" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+
+            <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+            <li data-row="2" data-col="2" data-sizex="1" data-sizey="2" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+          </ul>
+	</div>
+	</td>
+	</tr>
+	</tbody>
+	</table>
+</body>
+</html>
+

@@ -1,74 +1,25 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="jquery.gridster.css">
-<link rel="stylesheet" type="text/css" href="style.css">
-<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
-<script src="jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
-<script src="jbScript.js" type="text/javascript" charset="utf-8"></script>
-<script src="pqScript.js" type="text/javascript" charset="utf-8"></script>
+<!--<link rel="stylesheet" type="text/css" href="css/jquery.gridster.css">-->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/gridstack.css">
+<link rel="stylesheet" type="text/css" href="css/gridstack-demo.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<style type="text/css" data-gs-id="gridstack-style-1243"></style>
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+<!--<script src="js/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>-->
+<script type="text/javascript" src="js/knockout-3.4.0.js"></script>
+<script type="text/javascript" src="js/lodash.js"></script>
+<script type="text/javascript" src="js/gridstack.js"></script>
+
+<!--<script src="js/jbScript.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/pqScript.js" type="text/javascript" charset="utf-8"></script>-->
 </head>
 <body>
-<script type="text/javascript">
-  
-  var esquema;
-  var cajaHerramientas;
 
-  $(function(){
-
-    esquema = $("#esquema ul").gridster({
-	namespace:'#esquema',
-        widget_margins: [10, 10],
-        widget_base_dimensions: [60, 60],
-        resize: {
-            enabled: true
-        }, draggable: {
-            start: function(e, ui, $widget) {
-			
-            },
-
-            drag: function(e, ui, $widget) {
-              
-            },
-
-            stop: function(e, ui, $widget) {
-              
-            }
-          }
-    }).data('gridster');
-esquema.disable_resize();
-	
-	cajaHerramientas = $("#cajaHerramientas ul").gridster({
-	namespace:'#cajaHerramientas',
-        widget_margins: [10, 10],
-        widget_base_dimensions: [140, 140],
-        resize: {
-            enabled: false
-        }
-    }).data('gridster');
-	
-	cajaHerramientas.disable();
-
-
-    // var collection = [
-    //     ['<li><div class="title">drag</div>Widget content</li>', 1, 2],
-    //     ['<li><div class="title">drag</div>Widget content</li>', 5, 2],
-    //     ['<li><div class="title">drag</div>Widget content</li>', 3, 2],
-    //     ['<li><div class="title">drag</div>Widget content</li>', 2, 1],
-    //     ['<li><div class="title">drag</div>Widget content</li>', 4, 1],
-    //     ['<li><div class="title">drag</div>Widget content</li>', 1, 2],
-    //     ['<li><div class="title">drag</div>Widget content</li>', 2, 1],
-    //     ['<li><div class="title">drag</div>Widget content</li>', 3, 2],
-    //     ['<li><div class="title">drag</div>Widget content</li>', 1, 1],
-    //     ['<li><div class="title">drag</div>Widget content</li>', 2, 2],
-    //     ['<li><div class="title">drag</div>Widget content</li>', 1, 3],
-    // ];
-
-    // $.each(collection, function(i, widget){
-    //     gridster.add_widget.apply(gridster, widget)
-    // });
-
-  });
-</script>
 <div id="block_0" style="background-color: #0000ff; text-align: center; margin: 0 auto;">
 <table style="width: 100%; text-align: center;">
 <tbody>
@@ -97,35 +48,42 @@ esquema.disable_resize();
 
 <td style="width: 15%;" class="cajaHerramientas">
         <div id="cajaHerramientas" class="gridster" style="width: 150px;">
-          <ul style="height: 480px;  position: relative;" >
-           
-          </ul>
+          
         </div>
 </td>
 <td style="width: 85%;" class="esquema">
-        <div id="esquema" class="gridster" style="width: 600px;">
-          <ul style="height: 480px; position: relative;">
-            <li data-row="1" data-col="1" data-sizex="2" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
-            <li data-row="3" data-col="1" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
-
-            <li data-row="3" data-col="3" data-sizex="2" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
-            <li data-row="1" data-col="3" data-sizex="2" data-sizey="2" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
-
-            <li class="gs-w" data-row="1" data-col="5" data-sizex="1" data-sizey="1" data-max-sizex="1" data-max-sizey="1"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
-            <li data-row="2" data-col="5" data-sizex="2" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
-            <li data-row="3" data-col="5" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
-
-            <li data-row="1" data-col="6" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
-            <li data-row="3" data-col="6" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
-
-            <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
-            <li data-row="2" data-col="2" data-sizex="1" data-sizey="2" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
-          </ul>
-	</div>
+        
+         <div class="grid-stack grid-stack-1104 grid-stack-animate" data-gs-width="12" data-gs-animate="yes" style="height: 460px;">
+                <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2"><div class="grid-stack-item-content ui-draggable-handle">1</div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div></div>
+                <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-gs-x="4" data-gs-y="0" data-gs-width="4" data-gs-height="4"><div class="grid-stack-item-content ui-draggable-handle">2</div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div></div>
+                <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide ui-resizable-disabled" data-gs-x="8" data-gs-y="0" data-gs-width="2" data-gs-height="2" data-gs-min-width="2" data-gs-no-resize="yes"><div class="grid-stack-item-content ui-draggable-handle"> <span class="fa fa-hand-o-up"></span> Drag me! </div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div></div>
+                <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-gs-x="10" data-gs-y="0" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content ui-draggable-handle">4</div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div></div>
+                <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-gs-x="0" data-gs-y="2" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content ui-draggable-handle">5</div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div></div>
+                <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-gs-x="2" data-gs-y="2" data-gs-width="2" data-gs-height="4"><div class="grid-stack-item-content ui-draggable-handle">6</div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div></div>
+                <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-gs-x="8" data-gs-y="2" data-gs-width="4" data-gs-height="2"><div class="grid-stack-item-content ui-draggable-handle">7</div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div></div>
+                <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-gs-x="0" data-gs-y="4" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content ui-draggable-handle">8</div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div></div>
+                <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-gs-x="4" data-gs-y="4" data-gs-width="4" data-gs-height="2"><div class="grid-stack-item-content ui-draggable-handle">9</div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div></div>
+                <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-gs-x="8" data-gs-y="4" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content ui-draggable-handle">10</div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div></div>
+                <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-gs-x="10" data-gs-y="4" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content ui-draggable-handle">11</div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div></div>
+            </div>
+        </div>
+	
 	</td>
 	</tr>
 	</tbody>
 	</table>
+<script type="text/javascript">
+        $(function () {
+            $('.grid-stack').gridstack({
+                width: 12,
+                always_show_resize_handle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+                resizable: {
+                    handles: 'e, se, s, sw, w'
+                }
+            });
+        });
+    
+</script>
 </body>
 </html>
 

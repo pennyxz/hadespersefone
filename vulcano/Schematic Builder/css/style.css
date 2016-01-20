@@ -1,0 +1,105 @@
+*  {
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav { display: block; }
+[hidden] { display: none; }
+
+ul, ol {
+    list-style: none;
+}
+
+/*Overlay Styles*/
+#overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+#modal {
+    position:absolute;
+    background:url(tint20.png) 0 0 repeat;
+    background:rgba(0,0,0,0.2);
+    border-radius:14px;
+    padding:8px;
+}
+
+#content {
+    border-radius:8px;
+    background:#ff3;
+    padding:20px;
+    z-index: 10; position:relative;
+}
+#close {
+    position:absolute;
+    background:url(img/close.png) 0 0 no-repeat;
+    /*background-color: #660066;*/
+    width:24px;
+    height:27px;
+    display:block;
+    text-indent:-9999px;
+    top:-7px;
+    right:-7px;
+    z-index: 11; 
+}
+/* Gridster styles */
+.cajaHerramientas {
+
+    background: #660066;
+}
+
+.esquema {
+    
+    background: #004756;
+}
+
+.gridster {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.gridster .gs-w {
+    background: #FFF;
+    cursor: pointer;
+    -webkit-box-shadow: 5 5 5px rgba(0,0,0,0.3);
+    box-shadow: 5 5 5px rgba(0,0,0,0.3);
+}
+
+.gridster .player {
+    -webkit-box-shadow: 3px 3px 3px 5px rgba(0,0,0,0.3);
+    box-shadow: 3px 3px 3px 5px rgba(0,0,0,0.3);
+}
+
+.gridster .clicked {
+    -webkit-box-shadow: 3px 3px 3px 3px blue;
+    box-shadow: 3px 3px 3px 3px blue;
+}
+
+
+.gridster .gs-w.try {
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    background-position: 37px -169px;
+
+}
+
+.gridster .preview-holder {
+    border: none!important;
+    border-radius: 0!important;
+    background: rgba(255,255,255,.2)!important;
+}
+
+.sb-btn{border:none;display:inline-block;outline:0;padding:6px 16px;vertical-align:middle;overflow:hidden;text-decoration:none !important;color:#fff;background-color:#fff;text-align:center;transition:.2s ease-out;cursor:pointer;white-space:nowrap}
+
+.sb-btn-color{color: #FFFFFF;
+    background-color: #73AD21;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);}
+
+button[type="button"]:disabled {
+    background: #dddddd;
+}
