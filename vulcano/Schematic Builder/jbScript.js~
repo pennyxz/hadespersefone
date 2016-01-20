@@ -76,8 +76,7 @@ $(document).ready(function(){
 	$('#btnExportar').click(function(e){
 		var codigo = $('#esquema').html();
 		//alert(codigo);
-		modal.open({content: "<textarea rows='30' cols='70'>"+codigo+"</textarea>"
-					});
+		modal.open({content: "<p>HTML</p><textarea rows='30' cols='70'>"+codigo+"</textarea>"});
 		
 		e.preventDefault();
 	});

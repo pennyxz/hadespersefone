@@ -35,7 +35,7 @@ $(document).on('mousedown click', '.esquema .gs-w', function(){
 });
 
 function removerSeleccion(){
-	$('.gs-w').removeClass("clicked");
+$('.gs-w').removeClass("clicked");
 }
 
 function habilitarBotones(){
