@@ -37,7 +37,7 @@ ul, ol {
 }
 #close {
     position:absolute;
-    background:url(close.png) 0 0 no-repeat;
+    background:url(img/close.png) 0 0 no-repeat;
     /*background-color: #660066;*/
     width:24px;
     height:27px;
