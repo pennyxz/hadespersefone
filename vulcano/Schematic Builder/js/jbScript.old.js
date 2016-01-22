@@ -1,54 +1,66 @@
 var contadorEquipos = 0;
 
 $(document).ready(function(){
-
-var collectionA =[
-		 {x: 0, y: 0, width: 12, height: 2},
-    		 {x: 1, y: 0, width: 12, height: 2},
-    		 {x: 2, y: 0, width: 12, height: 2}
+	
+	//alert("doc ready");
+	var isCollectionACharged = false, isCollectionBCharged = false,
+		isCollectionCCharged = false;
+	var collectionA =[
+		['<li class="collectionA" onclick="clickFunction(this)">bombaA</li>', 1, 1],
+		['<li class="collectionA" onclick="clickFunction(this)">bombaB</li>', 1, 1],
+		['<li class="collectionA" onclick="clickFunction(this)">bombaC</li>', 1, 1]
 	];
 	var collectionB =[
-		 {x: 0, y: 0, width: 12, height: 2},
-    		 {x: 1, y: 0, width: 12, height: 2},
-    		 {x: 2, y: 0, width: 12, height: 2}
+		['<li class="collectionB" onclick="clickFunction(this)">equipoA</li>', 1, 1],
+		['<li class="collectionB" onclick="clickFunction(this)">equipoB</li>', 1, 1],
+		['<li class="collectionB" onclick="clickFunction(this)">equipoC</li>', 1, 1]
 	];
 	var collectionC =[
-		 {x: 0, y: 0, width: 12, height: 2},
-    		 {x: 1, y: 0, width: 12, height: 2},
-    		 {x: 2, y: 0, width: 12, height: 2}
+		['<li class="collectionC" onclick="clickFunction(this)">aireA</li>', 1, 1],
+		['<li class="collectionC" onclick="clickFunction(this)">aireB</li>', 1, 1],
+		['<li class="collectionC" onclick="clickFunction(this)">aireC</li>', 1, 1]
 	];
-	
+	/* <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+       <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+       <li data-row="3" data-col="1" data-sizex="1" data-sizey="1" class="gs-w"><span class="gs-resize-handle gs-resize-handle-both"></span></li>
+	*/
+
+
 	$('#industrySelector').change(function(){
 
 		//alert($('#industrySelector option:selected').val());
 		
 		switch($('#industrySelector option:selected').val()){
 			case "default":{
-				gridCajaHerramientas.remove_all();
+				//alert("a");
+				cajaHerramientas.remove_all_widgets();
+				//cajaHerramientas.remove_widget( $('#cajaHerramientas ul li') );
+				//$('#cajaHerramientas ul li').hide();
 				break;
 			}
 			case "firstOption":{
-				gridCajaHerramientas.remove_all();
-				$.each(collectionA, function(i,widget){
-				gridCajaHerramientas.add_widget($('<div class="grid-stack-item-content" onclick="clickFunction()">bomba'+i+'</div>'), widget.x, widget.y, widget.width, widget.height);
+				//alert("b");
+				cajaHerramientas.remove_all_widgets();
+				$.each(collectionA, function(i, widget){					
+				    cajaHerramientas.add_widget.apply(cajaHerramientas, widget);
 				});
-				gridCajaHerramientas.resizable('.grid-stack-item', false);
+				
 				break;
 			}
 			case "secondOption":{
-				gridCajaHerramientas.remove_all();
+				//alert("c");
+				cajaHerramientas.remove_all_widgets();
 				$.each(collectionB, function(i, widget){
-				    gridCajaHerramientas.add_widget($('<div class="grid-stack-item-content" onclick="clickFunction()">equipo'+i+'</div>'), widget.x, widget.y, widget.width, widget.height);
+				    cajaHerramientas.add_widget.apply(cajaHerramientas, widget);
 				});
-				gridCajaHerramientas.resizable('.grid-stack-item', false);
 				break;
 			}
 			case "thirdOption":{
-				gridCajaHerramientas.remove_all();
+				//alert("d");
+				cajaHerramientas.remove_all_widgets();
 				$.each(collectionC, function(i, widget){
-				    gridCajaHerramientas.add_widget($('<div class="grid-stack-item-content" onclick="clickFunction()">aire'+i+'</div>'), widget.x, widget.y, widget.width, widget.height);
+				    cajaHerramientas.add_widget.apply(cajaHerramientas, widget);
 				});
-				 gridCajaHerramientas.resizable('.grid-stack-item', false);
 				break;
 			}
 				
@@ -67,12 +79,17 @@ var collectionA =[
 	
 });
 
-function clickFunction(){
+function clickFunction(liObject){
 	
-if (gridEsquema.will_it_fit(0, 0, 2, 1, true)) {
-	gridEsquema.add_widget($('<div class="grid-stack-item"><div class="grid-stack-item-content">Hola</div></div>'), 0, 0, 2, 1, true);
-	gridEsquema.resizable('.grid-stack-item', false);	
-}
+	/*var x = $(liObject).prop('outerHTML');
+	alert(x);
+	esquema.add_widget(x);*/
+	
+	//alert(x);
+	esquema.add_widget($(liObject).prop('outerHTML'));
+	$('#esquema ul li:last').removeAttr("onclick").css("display", "");
+	
+
 }
 //modal export screen
 var modal = (function(){

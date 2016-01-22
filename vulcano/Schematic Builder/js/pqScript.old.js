@@ -1,5 +1,5 @@
 $(document).ready(function(){
-$(document).on('mousedown click', '#gridEsquema .grid-stack-item', function(){
+$(document).on('mousedown click', '.esquema .gs-w', function(){
     		habilitarBotones();
 		removerSeleccion();
 		$(this).addClass("clicked");
@@ -8,23 +8,23 @@ $(document).on('mousedown click', '#gridEsquema .grid-stack-item', function(){
 
 	deshabilitarBotones();
 	$("#btnEliminar").click(function(){
-	     gridEsquema.remove_widget($('.clicked')[0]);
+	     esquema.remove_widget( $('.gridster li.clicked')[0]);
 	     deshabilitarBotones();	
 	});
 
 	$("#btnBorrarTodo").click(function(){
-	     gridEsquema.remove_all();
+	     esquema.remove_all_widgets();
 	     deshabilitarBotones();
 		
 	});
 
 	$("#btnTamano").click(function(){
-	     gridEsquema.resizable('.grid-stack-item', true);
+	     esquema.enable_resize();
 	     	
 	});
 
 	$('.esquema').click(function(e) {
-        if(!$(e.target).hasClass('grid-stack-item')) {
+        if(!$(e.target).hasClass('gs-w')) {
 	    deshabilitarBotones();
             removerSeleccion();
 	    deshabilitarResize();
@@ -35,7 +35,7 @@ $(document).on('mousedown click', '#gridEsquema .grid-stack-item', function(){
 });
 
 function removerSeleccion(){
-$('.grid-stack-item').removeClass("clicked");
+$('.gs-w').removeClass("clicked");
 }
 
 function habilitarBotones(){
@@ -49,5 +49,5 @@ $("#btnEliminar").attr('disabled', true);
 }
 
 function deshabilitarResize(){
-    gridEsquema.resizable('.grid-stack-item', false);
+esquema.disable_resize();
 }

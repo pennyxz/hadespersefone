@@ -7,6 +7,8 @@
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 <script src="js/gridstack.js"></script>
+<script src="js/jbScript.js"></script>
+<script src="js/pqScript.js"></script>
 
 
 </head>
@@ -28,7 +30,7 @@
 <option value="thirdOption">3</option>
 </select></td>
 <td style="width: 85%;text-align: center;">
-<button type="button" id="btnTamano" class="sb-btn sb-btn-color">Editar Tamaño</button>
+<button type="button" id="btnTamano" class="sb-btn sb-btn-color">Editar TamaÃ±o</button>
 <button type="button" id="btnEliminar" class="sb-btn sb-btn-color">Eliminar componente</button>
 <button type="button" id="btnBorrarTodo" class="sb-btn sb-btn-color">Borrar Todo</button>
 <button type="button" id ="btnExportar" class="sb-btn sb-btn-color">Exportar</button>
@@ -42,27 +44,16 @@
 
 
 <td style="width: 15%;" class="cajaHerramientas">
-        <div id="cajaHerramientas" class="gridster" style="width: 150px;">
-          <ul style="height: 480px;  position: relative;" >
-           
-          </ul>
+        <div id="cajaHerramientas" style="width: 200px;">
+            <div id="gridCajaHerramientas" class="grid-stack" data-gs-width="12" style="margin: 2px;">    
+            </div>
         </div>
 </td>
 <td style="width: 85%;" class="esquema">
-        <div id="esquema" style="width: 600px;height: 1000px;">
+        <div id="esquema" style="width: 600px; height:600px;">
          
-<div class="grid-stack" data-gs-width="12">
-	<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
-	<div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="4" data-gs-height="4"><div class="grid-stack-item-content"></div></div>
-	<div class="grid-stack-item" data-gs-x="8" data-gs-y="0" data-gs-width="2" data-gs-height="2" data-gs-min-width="2" data-gs-no-resize="yes"><div class="grid-stack-item-content"> <span class="fa fa-hand-o-up"></span> Drag me! </div></div>
-	<div class="grid-stack-item" data-gs-x="10" data-gs-y="0" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
-	<div class="grid-stack-item" data-gs-x="0" data-gs-y="4" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
-	<div class="grid-stack-item" data-gs-x="2" data-gs-y="4" data-gs-width="2" data-gs-height="4"><div class="grid-stack-item-content"></div></div>
-	<div class="grid-stack-item" data-gs-x="8" data-gs-y="4" data-gs-width="4" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
-	<div class="grid-stack-item" data-gs-x="0" data-gs-y="6" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
-	<div class="grid-stack-item" data-gs-x="4" data-gs-y="6" data-gs-width="4" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
-	<div class="grid-stack-item" data-gs-x="8" data-gs-y="6" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
-	<div class="grid-stack-item" data-gs-x="10" data-gs-y="6" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
+<div id="gridEsquema" class="grid-stack" data-gs-width="12" style="margin: 2px;">
+		
 </div>
 	</div>
 	</td>
@@ -70,16 +61,30 @@
 	</tbody>
 	</table>
 <script type="text/javascript">
-        $(function () {
-            $('.grid-stack').gridstack({
+    var esquema;
+    var cajaHerramientas;
+    var gridEsquema;
+    var gridCajaHerramientas;
+            
+            esquema = $('#gridEsquema').gridstack({
                 width: 12,
-		float: true,
-                always_show_resize_handle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-                resizable: {
-                    handles: 'e, se, s, sw, w'
-                }
+                float: true,
+                height: 10
+                
             });
-        });
+            gridEsquema = $('#gridEsquema').data('gridstack');
+            gridEsquema.resizable('.grid-stack-item', false);
+            
+            cajaHerramientas = $('#gridCajaHerramientas').gridstack({
+                width: 12,
+                height: 10
+                
+            });
+            gridCajaHerramientas = $('#gridCajaHerramientas').data('gridstack');
+            gridCajaHerramientas.disable();
+       
+   
+   
     </script>
 </body>
 </html>

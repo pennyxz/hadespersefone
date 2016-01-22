@@ -1,6 +1,25 @@
 var contadorEquipos = 0;
 
 $(document).ready(function(){
+	
+	/*var isCollectionACharged = false, isCollectionBCharged = false,
+		isCollectionCCharged = false;
+
+	var collectionA =[
+		['<li class="collectionA" onclick="clickFunction(this)">bombaA</li>', 1, 1],
+		['<li class="collectionA" onclick="clickFunction(this)">bombaB</li>', 1, 1],
+		['<li class="collectionA" onclick="clickFunction(this)">bombaC</li>', 1, 1]
+	];
+	var collectionB =[
+		['<li class="collectionB" onclick="clickFunction(this)">equipoA</li>', 1, 1],
+		['<li class="collectionB" onclick="clickFunction(this)">equipoB</li>', 1, 1],
+		['<li class="collectionB" onclick="clickFunction(this)">equipoC</li>', 1, 1]
+	];
+	var collectionC =[
+		['<li class="collectionC" onclick="clickFunction(this)">aireA</li>', 1, 1],
+		['<li class="collectionC" onclick="clickFunction(this)">aireB</li>', 1, 1],
+		['<li class="collectionC" onclick="clickFunction(this)">aireC</li>', 1, 1]
+	];*/
 
 var collectionA =[
 		 {x: 0, y: 0, width: 12, height: 2},
@@ -49,8 +68,10 @@ var collectionA =[
 				    gridCajaHerramientas.add_widget($('<div class="grid-stack-item-content" onclick="clickFunction()">aire'+i+'</div>'), widget.x, widget.y, widget.width, widget.height);
 				});
 				 gridCajaHerramientas.resizable('.grid-stack-item', false);
+
 				break;
 			}
+			//default:{gridCajaHerramientas.disable();}
 				
 		}
 		

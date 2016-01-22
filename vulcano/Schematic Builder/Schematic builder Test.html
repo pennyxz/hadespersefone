@@ -1,56 +1,14 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/style.css">
 <link href="css/gridstack.css" rel="stylesheet">
 <link href="css/gridstack-demo.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
-<script src="js/gridstack.js"></script>
-
-
+    <script src="js/gridstack.js"></script>
 </head>
 <body>
-<script type="text/javascript">
-  
-  
-</script>
-<div id="block_0" style="background-color: #0000ff; text-align: center; margin: 0 auto;">
-<table style="width: 100%; text-align: center;">
-<tbody>
-
-<tr>
-<td style="width: 15%; text-align: center;">
-<select id="industrySelector">
-<option value="default">DEF</option>
-<option value="firstOption">1</option>
-<option value="secondOption">2</option>
-<option value="thirdOption">3</option>
-</select></td>
-<td style="width: 85%;text-align: center;">
-<button type="button" id="btnTamano" class="sb-btn sb-btn-color">Editar Tamaño</button>
-<button type="button" id="btnEliminar" class="sb-btn sb-btn-color">Eliminar componente</button>
-<button type="button" id="btnBorrarTodo" class="sb-btn sb-btn-color">Borrar Todo</button>
-<button type="button" id ="btnExportar" class="sb-btn sb-btn-color">Exportar</button>
-<button type="button" class="sb-btn sb-btn-color">Click!</button>
-</td>
-</tbody>
-</table>
-</div>
-<table style="width: 100%;">
-<tbody>
-
-
-<td style="width: 15%;" class="cajaHerramientas">
-        <div id="cajaHerramientas" class="gridster" style="width: 150px;">
-          <ul style="height: 480px;  position: relative;" >
-           
-          </ul>
-        </div>
-</td>
-<td style="width: 85%;" class="esquema">
-        <div id="esquema" style="width: 600px;height: 1000px;">
-         
+    
 <div class="grid-stack" data-gs-width="12">
 	<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
 	<div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="4" data-gs-height="4"><div class="grid-stack-item-content"></div></div>
@@ -64,23 +22,15 @@
 	<div class="grid-stack-item" data-gs-x="8" data-gs-y="6" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
 	<div class="grid-stack-item" data-gs-x="10" data-gs-y="6" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content"></div></div>
 </div>
-	</div>
-	</td>
-	</tr>
-	</tbody>
-	</table>
+    
 <script type="text/javascript">
         $(function () {
-            $('.grid-stack').gridstack({
-                width: 12,
-		float: true,
-                always_show_resize_handle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-                resizable: {
-                    handles: 'e, se, s, sw, w'
-                }
-            });
-        });
-    </script>
+    $('.grid-stack').gridstack({
+    float:true,
+	width: 12
+    });
+});
+    </script>    
 </body>
 </html>
 

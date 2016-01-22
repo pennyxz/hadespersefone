@@ -75,9 +75,10 @@ ul, ol {
     box-shadow: 3px 3px 3px 5px rgba(0,0,0,0.3);
 }
 
-.gridster .clicked {
-    -webkit-box-shadow: 3px 3px 3px 3px blue;
-    box-shadow: 3px 3px 3px 3px blue;
+.clicked {
+    border-style: solid;
+    border-width: 3px;
+    border-color: aquamarine;
 }
 
 
