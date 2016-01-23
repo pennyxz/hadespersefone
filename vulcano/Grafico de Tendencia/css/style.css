@@ -6,7 +6,7 @@ body { margin: 0; }
 
 .columnsContainer, footer, header { position: relative; margin: .5em; }
 
-.leftColumn, .rightColumn, footer, header {  border: 1px solid  #ccc; padding: 1.25em; }
+.leftColumn, .rightColumn, .buttonColumn, footer, header {  border: 1px solid  #ccc; padding: 1.25em; }
 
 .leftColumn { margin-bottom: .5em; }
 
@@ -49,6 +49,7 @@ body { margin: 0; }
 /* MEDIA QUERIES */
 @media screen and (min-width: 47.5em ) {
   .rightColumn { margin-left: 19.5em; top: 0}
+    .buttonColumn { margin: 0; top: 0; text-align: center}
     
      .leftColumn { top: 0;  width: 18.75em;position: absolute;}  
  
@@ -65,4 +66,7 @@ body { margin: 0; }
 }
 
 ul {list-style: none;}
+input.time {
+    width: 80px;
+}
 
